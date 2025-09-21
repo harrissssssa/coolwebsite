@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>!!SYSTEM ALERT!!</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 70px;
+            animation: flash 0.5s infinite;
+        }
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>!!!VIRUS DETECTED!!!</h1>
+    <p>Your system is being hacked!</p>
+    <p>Critical files are being deleted in <span id="countdown">10</span> seconds!</p>
+    <script>
+        let counter = 10;
+        const countdown = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            counter--;
+            countdown.textContent = counter;
+            if(counter <= 0){
+                clearInterval(interval);
+                alert('Just kidding, Bigmancozmo says you got trolled!');
+                window.location.href = 'https://i.imgur.com/yourfunnyimage.png'; // Replace with meme/image
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
